@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background: #fafafa;
+}
+
+.container {
+    position: fixed;
+    width: 25%;
+    top: 50%;
+    left: 50%;
+    height: 350px;
+    border: 1px solid #ebebeb;
+    box-shadow: rgba(0, 0, 0, 0.14902) 0 1px 1px 0, rgba(0, 0, 0, 0.09804) 0 1px 2px 0;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.form {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+.form>div{
+    padding-top: 4em;
+}
+
+.form input {
+    font-size: 1.2em;
+    padding: 2em 0 0 0;
+    margin: 0 auto;
+    -webkit-appearance: none;
+    display: block;
+    color: #636363;
+    width: 75%;
+    border: none;
+    border-bottom: 1px solid #757575;
+}
+
+.form input:focus{
+    border-bottom: 3px solid #6eb9f7;
+}
+
+.form input[type=submit] {
+    width: 25%;
+    margin-top: 2.5em;
+    border: none;
+    border-radius: 2px;
+    padding: 12px 18px;
+    font-size: 16px;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: white;
+    background: #2196f3 center;
+    box-shadow: 0 0 4px #999;
+    outline: none;
+    transition: background .8s;
+}
+
+.form input:focus {
+    outline: none;
+}
+
+.form input[type=submit]:hover {
+    background: #47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%;
+}
+
+.form input[type=submit]:active {
+    background: #6eb9f7;
+    background-size: 100%;
+    transition: background .6s;
+}
+
+.login-inputs{
+    padding-left: 8px;
+    padding-right: 8px;
+}

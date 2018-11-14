@@ -8,8 +8,6 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <!--Import materialize.css-->
         <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
-        <!-- Import de normalize -->
-        <link type="text/css" rel="stylesheet" href="css/normalize.css">
         <!-- CSS propio -->
         <link rel="stylesheet" href="css/style.css" type="text/css">
         <!-- roboto font -->
@@ -21,12 +19,12 @@
     <body>
 
         <div class="container">
-            <form name="login" class="form" action="" method="post">
+            <form class="form" action="" method="post">
                 <div class="input-container">
                     <div class="row">
                         <div class="input-field col s12">
-                            <input name="username" id="username" type="text" class="validate">
-                            <label for="username">Username</label>
+                            <input id="last_name" type="text" class="validate">
+                            <label for="last_name">Username</label>
                         </div>
                         <div class="input-field col s12">
                             <input id="password" type="password" class="validate">
@@ -36,7 +34,8 @@
                 </div>
                 <button id="form-button" class="btn waves-effect waves-light" type="submit" name="action">Login</button>
             </form>
-        </div>
+        </div
+>
         <script type="text/javascript" src="js/materialize.min.js"></script>
         <script src="js/main.js" rel="script" type="text/javascript"></script>
     </body>

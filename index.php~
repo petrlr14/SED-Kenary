@@ -1,0 +1,39 @@
+<?php
+    
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    
+    <script src="js/main.js" rel="script" type="text/javascript"></script>
+    <title>Title</title>
+</head>
+<body>
+
+<div class="container">
+    <form class="form" action="" method="post">
+        
+		<div class="row">
+            <div class="input-field col s12">
+          		<input id="last_name" type="text" class="validate">
+          		<label for="last_name">Username</label>
+        		</div>
+                
+       </div>
+       <div class="row">
+			<div class="input-field col s12">
+          		<input id="password" type="password" class="validate">
+          		<label for="password">Password</label>
+        		</div>       
+       </div>
+        <input class="ripple" type="submit" value="Login">
+    </form>
+</div>
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+</body>
+</html>

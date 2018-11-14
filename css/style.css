@@ -27,7 +27,7 @@ body {
     background-color: #fff;
 }
 
-.form>div{
+.form>div {
     padding-top: 4em;
 }
 
@@ -43,6 +43,16 @@ body {
     border-bottom: 1px solid #757575;
 }
 
+.input-field input[type=text].valid {
+    border-bottom: 1px solid #26A69A;
+    box-shadow: 0 1px 0 0 #26A69A;
+}
+
+.input-field input[type=password].valid {
+    border-bottom: 1px solid #26A69A;
+    box-shadow: 0 1px 0 0 #26A69A;
+}
+
 .form button {
     display: block;
     width: 25%;
@@ -54,14 +64,44 @@ body {
     outline: none;
 }
 
-.input-container{
+.input-container {
     width: 90%;
     margin-left: 5.5%;
     margin-right: 10%;
 }
 
-@media only screen and(max-width:120px){
-    body{
-        background: red;
+@media(max-width:1130px) {
+    .container {
+        width: 30%;
+    }
+}
+
+@media(max-width:960px) {
+    .container {
+        width: 35%;
+    }
+}
+
+@media(max-width:880px) {
+    .container {
+        width: 40%;
+    }
+}
+
+@media(max-width:710px) {
+    .container {
+        width: 45%;
+    }
+}
+
+@media(max-width:600px) {
+    .container {
+        width: 60%;
+    }
+}
+
+@media(max-width:400px) {
+    .container {
+        width: 80%;
     }
 }

@@ -14,6 +14,8 @@
     
     $result=pg_query($dbconn, "SELECT id_usuario, password_usuario, id_rol FROM usuario WHERE correo_usuario = '$username'");
 
+    echo pg_last_error();
+
     $re=pg_fetch_row($result);
 
     pg_close();

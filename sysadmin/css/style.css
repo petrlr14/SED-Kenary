@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background: #fafafa;
+}
+
+.error {
+    position: absolute;
+    width: 25%;
+    top: 5%;
+    left: 37.5%;
+    height: 2em;
+    color: #D8000C;
+    background-color: #FFD2D2;
+    border-radius: 0.4em;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.error>div{
+    line-height: 2em;
+}
+
+.container {
+    position: fixed;
+    width: 25%;
+    top: 50%;
+    left: 50%;
+    height: 500px;
+    background: #fff;
+    border: 1px solid #ebebeb;
+    box-shadow: rgba(0, 0, 0, 0.14902) 0 1px 1px 0, rgba(0, 0, 0, 0.09804) 0 1px 2px 0;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.container>img{
+    position: absolute;
+    left: 50%;
+    width: 150px;
+    height: 150px;
+    margin-left: -75px;
+    margin-top: 10px;
+}
+
+.form {
+    padding-top: 150px;
+    width: 100%;
+    height: 350px;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+.form>div {
+    padding-top: 4em;
+}
+
+.form input {
+    font-size: 1.2em;
+    padding: 2em 0 0 0;
+    margin: 0 auto;
+    -webkit-appearance: none;
+    display: block;
+    color: #636363;
+    width: 75%;
+    border: none;
+    border-bottom: 1px solid #757575;
+}
+
+.input-field input[type=text].valid {
+    border-bottom: 1px solid #26A69A;
+    box-shadow: 0 1px 0 0 #26A69A;
+}
+
+.input-field input[type=password].valid {
+    border-bottom: 1px solid #26A69A;
+    box-shadow: 0 1px 0 0 #26A69A;
+}
+
+.form button {
+    display: block;
+    width: 25%;
+    margin-left: 37.5%;
+    margin-top: 2.5em;
+}
+
+.form input:focus {
+    outline: none;
+}
+
+.input-container {
+    width: 90%;
+    margin-left: 5.5%;
+    margin-right: 10%;
+}
+
+@media(max-width:1130px) {
+    .container {
+        width: 30%;
+    }
+}
+
+
+@media(max-width:960px) {
+    .container {
+        width: 35%;
+    }
+}
+
+@media(max-width:880px) {
+    .container {
+        width: 40%;
+    }
+}
+
+@media(max-width:710px) {
+    .container {
+        width: 45%;
+    }
+}
+
+@media(max-width:600px) {
+    .container {
+        width: 60%;
+    }
+}
+
+@media(max-width:400px) {
+    .container {
+        width: 80%;
+    }
+}

@@ -1,33 +1,3 @@
-<?php
-    session_start();
-//    $secret_key = 'c8d0fa5cd8875b87d6eb04793ea95947';
-//    $headers = getallheaders();
-//    if ($_SESSION['JWTToken']) {
-//        $jwt = $headers['Authorization'];
-//        $token = JWT::decode($jwt, $secret_key);
-//        if ($token->exp >= time()) {
-//            //loggedin
-//        } else {
-//            session_destroy();
-//            header('Location: https://kenary.nelsoncastro.me?timeout=true');
-//        }
-//    } else {
-//        session_destroy();
-//        header('Location: https://kenary.nelsoncastro.me');
-//    }
-//
-    if(!$_SESSION['logged']){
-        session_destroy();
-        header('Location: https://kenary.nelsoncastro.me');
-    }else{
-        if($_SESSION['expire']<=time()){
-            session_destroy();
-            header('Location: https://kenary.nelsoncastro.me?timeout=true');
-        }
-    }
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,11 +10,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <link rel="stylesheet" href="./css/style-dashboard.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="icon" href="./img/LogoKenary.png">
+    <link rel="icon" href="../img/LogoKenary.png">
     <title>Dashboard</title>
 </head>
 <body>
-
+    
     <div class="navbar-fixed">
         <nav>
             <div class="nav-wrapper">
@@ -56,7 +26,7 @@
     <div class="cont">
 
         <div class="row">
-    <div class="col m10">
+    <div class="col m6">
       <div class="card blue-grey darken-1">
         <div class="card-content white-text">
           <span class="card-title">Card Title</span>
@@ -70,7 +40,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col m10">
+    <div class="col m6">
       <div class="card blue-grey darken-1">
         <div class="card-content white-text">
           <span class="card-title">Card Title</span>
@@ -84,15 +54,14 @@
     </div>
   </div>
   <div class="row">
-    <div class="col m10">
+    <div class="col m6">
       <div class="card blue-grey darken-1">
         <div class="card-content white-text">
-          <span class="card-title">Card Title</span>
-          <p>I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively.</p>
+          <span class="card-title">Usuarios</span>
+          <p>Administra los usuarios que tienen acceso al sistema Kenary</p>
         </div>
         <div class="card-action">
-          <a href="#">This is a link</a>
+          <a href="usuarios.php">Usuarios</a>
         </div>
       </div>
     </div>

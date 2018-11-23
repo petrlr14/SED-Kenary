@@ -41,7 +41,7 @@
 
             <img src="./img/LogoKenary.png" alt="logo">
 
-            <form name="login" class="form" action="authenticate.php" method="post">
+            <form name="login" class="form" action="auth.php" method="post">
                 <div class="input-container">
                     <div class="row">
                         <div class="input-field col s12">   

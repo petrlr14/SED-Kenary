@@ -1,16 +1,4 @@
 <?php
-    session_start();
-    if(!$_SESSION['logged']){
-        session_destroy();
-        header('Location: https://kenary.nelsoncastro.me');
-    }
-    if($_SESSION['expire']<=time()){
-        session_destroy();
-        header('Location: https://kenary.nelsoncastro.me?timeout=true');
-    }
-
-    $type=$_SESSION['type'];
-
     include 'conn.php';
 
     $dbconn=
@@ -22,10 +10,8 @@
         $id=$row['id_materia'];
         $name=$row['nombre_materia'];
         $dataResult=$dataResult."<tr><td class=\"id\">$id</td><td>$name</td>";
-        if($type==2){
-            $dataResult=$dataResult."<td><a href=\"delete-materia.php\" class=\"delete waves-effect waves-light btn red\">BORRAR</a></td>";
-            $dataResult=$dataResult."<td><a class=\"mod waves-effect waves-light btn blue\">MODIFICAR</a></td>";
-        }
+        $dataResult=$dataResult."<td><a href=\"delete-materia.php\" class=\"delete waves-effect waves-light btn red\">BORRAR</a></td>";
+        $dataResult=$dataResult."<td><a class=\"mod waves-effect waves-light btn blue\">MODIFICAR</a></td>";
     }
 ?>
 
@@ -43,7 +29,7 @@
 </head>
 <body>
 
-    <?php include 'dashboard.php' ?>
+    <?php include 'nav-bar.php' ?>
 
     <div class="table">
         <table class="striped centered">
@@ -51,26 +37,17 @@
                 <tr>
                     <th>ID</th>
                     <th>Nombre</th>
-                    <?php
-                        if($type==2){
-                            echo "<th>Borrar</th><th>Modificar</th>";
-                        }
-                    ?>
+                    <th>Borrar</th>
+                    <th>Modificar</th>
                 </tr>
             </thead>
             <tbody><?php echo $dataResult?></tbody>
         </table>   
     </div>
     <div class="fixed-action-btn">
-        <a class="btn-floating btn-large red">
+        <a href="https://www.google.com"class="btn-floating btn-large red">
             <i class="large material-icons">mode_edit</i>
         </a>
-        <ul>
-            <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
-            <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
-            <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
-            <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
-        </ul>
     </div>
     <script src="js/materias.js"></script>
 </body>

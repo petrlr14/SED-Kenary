@@ -27,7 +27,7 @@
         $name=$row['nombre_usuario'];
         $rol=$row['nombre_rol'];
         $dataResult=$dataResult."<tr><td class=\"id\">$id</td><td>$name</td><td>$rol</td>";
-        if($type==2){
+        if($type==1){
             $dataResult=$dataResult."<td><a href=\"delete-usuario.php\"class=\"delete waves-effect waves-light btn red\" href=\"delete-usuario.php\">BORRAR</a></td>";
             $dataResult=$dataResult."<td><a class=\"mod waves-effect waves-light btn blue\">MODIFICAR</a></td>";
         }
@@ -45,7 +45,7 @@
     <title>Usuarios</title>
 </head>
 
-    <?php include 'dashboard.php' ?>
+    <?php include 'nav-bar.php' ?>
 
     <div class="table">
         <table class="striped centered">
@@ -55,7 +55,7 @@
                     <th>Nombre</th>
                     <th>Rol</th>
                     <?php
-                        if($type==2){
+                        if($type==1){
                             echo "<th>Borrar</th><th>Modificar</th>";
                         }
                     ?>
@@ -65,17 +65,12 @@
         </table>   
     </div>
 
-    <div class="fixed-action-btn">
-        <a class="btn-floating btn-large red">
-            <i class="large material-icons">mode_edit</i>
-        </a>
-        <ul>
-            <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
-            <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
-            <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
-            <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
-        </ul>
-    </div>
+    <?php
+        if($_SESSION['type']==1){
+            echo "<div class=\"fixed-action-btn\"><a class=\"btn-floating btn-large red\">
+            <i class=\"large material-icons\">add</i></a></div>";
+        }
+    ?>
       
     <script src="js/usuarios.js"></script>
 <body>

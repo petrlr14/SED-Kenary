@@ -45,8 +45,8 @@
         </table>   
     </div>
     <div class="fixed-action-btn">
-        <a href="https://www.google.com"class="btn-floating btn-large red">
-            <i class="large material-icons">mode_edit</i>
+        <a href="form-materia.php"class="btn-floating btn-large red">
+            <i class="large material-icons">add</i>
         </a>
     </div>
     <script src="js/materias.js"></script>

@@ -13,7 +13,7 @@
     //global $DB_NAME;
     //global $DB_USER;
     //global $DB_PASS;
-    $secret_key = 'e4b380d39aeaf39cbf67cce33b1cd665a1fec05c';
+    $secret_key = 'c8d0fa5cd8875b87d6eb04793ea95947';
     $db_conn =
         pg_connect("host=$DB_HOST port=$DB_PORT dbname=$DB_NAME user=$DB_USER password=$DB_PASS connect_timeout=5")
         or die("Murio");
@@ -23,22 +23,28 @@
         global $secret_key;
         $passwordResult = pg_query_params($db_conn, 'SELECT id_usuario, nombre_usuario, password_usuario, id_rol FROM usuario WHERE correo_usuario=$1',array($data[0]));
         $rowResult = pg_fetch_row($passwordResult);
-        echo $data[1];
-        echo $rowResult[2];
-        
         if(password_verify($data[1], $rowResult[2])){
-            if($rowResult[3]==2){
-                header('Location: https://kenary.nelsoncastro.me?admin=true');
-            }else{
-                $certificate = array($data[0],$rowResult[2]);
+            $certificate = array($data[0],$rowResult[2]);
             $_SESSION['logged']=true;
             $_SESSION['start']=time();
             $_SESSION['expire']=$_SESSION['start']+(10*60);
             $_SESSION['name'] = $rowResult[1];
             $_SESSION['id'] = $rowResult[0];
             $_SESSION['type'] = $rowResult[3];
+
+            //Creando token como JSON para el header
+            //$TOKENHEADER = array(
+            //    "data" => [
+            //        "name" => $_SESSION['name'],
+            //        "type" => $_SESSION['type'],
+            //    ],
+            //    "iss" => $_SESSION['username'],
+            //    "iar" => "".time()."",
+            //    "exp" => "".time()+(60*60)."",
+            //);
+            //$_SESSION['tokenJWT'] = JWT::encode($TOKENHEADER, $secret_key);
+            //$_SE
             header('Location: https://kenary.nelsoncastro.me/dashboard.php');
-            }
         }else{
             header('Location: https://kenary.nelsoncastro.me?badcredentials=true');
         }

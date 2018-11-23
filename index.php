@@ -33,9 +33,12 @@
             }else{
                 if(isset($_GET['timeout'])&&$_GET['timeout']){
                     echo "<div class=\"error\"><div>Timeout, login again</div></div>";
+                }else{
+                    if(isset($_GET['admin'])&&$_GET['admin']){
+                        echo "<div class=\"error\"><div>You ar a admin, you most login in /sysadmin</div></div>";
                 }
             }
-            
+        }
         ?>
         <div class="container">
 

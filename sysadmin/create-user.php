@@ -13,8 +13,16 @@
          or die("Murio");
         
         $resl=pg_query($dbconn,"INSERT INTO usuario(id_genero, id_rol, nombre_usuario, password_usuario, edad_usuario, correo_usuario) VALUES ($id_genero, $id_rol, '$nombre_usuario', '$password_usuario', $edad, '$correo');") or die(pg_last_error());
+
+        if($resl){
+            header('Location: https://kenary.nelsoncastro.me/sysadmin/usuarios.php');
+            pg_close();
+        }else{
+            echo pg_last_error();
+            pg_close();
+        }
+    }else{
+        header('Location: https://kenary.nelsoncastro.me/sysadmin/usuarios.php?error=true');
     }
     
-    
-
 ?>

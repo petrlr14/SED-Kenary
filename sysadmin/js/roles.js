@@ -10,7 +10,7 @@ let app={
                     .parentElement
                     .querySelector(".id")
                     .innerText;
-                window.location=`${this.href}?user_id=${id}`;
+                window.location=`${this.href}?rol_id=${id}`;
             });
         });
     }

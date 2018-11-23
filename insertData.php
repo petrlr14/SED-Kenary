@@ -16,17 +16,18 @@ or die("Murio");
 $options = [
     'cost' => 12,
 ];
-$passErnesto = password_hash('testing', PASSWORD_BCRYPT, $options);
-$passNelson = password_hash('root', PASSWORD_BCRYPT, $options);
-$passPedro = password_hash('pedrogo14', PASSWORD_BCRYPT, $options);
-$passRodrigo = password_hash('qwesed', PASSWORD_BCRYPT, $options);
-$passHenry = password_hash('ayudased', PASSWORD_BCRYPT, $options);
+//$passErnesto = password_hash('testing', PASSWORD_BCRYPT, $options);
+//$passNelson = password_hash('root', PASSWORD_BCRYPT, $options);
+//$passPedro = password_hash('pedrogo14', PASSWORD_BCRYPT, $options);
+//$passRodrigo = password_hash('qwesed', PASSWORD_BCRYPT, $options);
+//$passHenry = password_hash('ayudased', PASSWORD_BCRYPT, $options);
+$pass = password_hash('k23f11',PASSWORD_BCRYPT,$options);
 $insertRequest = pg_prepare($dbconn, 'insert_req', 'INSERT INTO usuario (nombre_usuario, password_usuario, edad_usuario, correo_usuario, id_genero, id_rol)
     VALUES ($1,$2,$3,$4,$5,$6);');
-pg_execute($dbconn,'insert_req',array('Ernesto Cabezas', $passErnesto, 20, 'ecabezas@gmail.com', 1, 1));
-pg_execute($dbconn,'insert_req',array('Nelson Castro', $passNelson, 20, 'nc@sed.me', 1, 2));
-pg_execute($dbconn,'insert_req',array('Pedro Gómez', $passPedro, 23, 'pedrogo14@gmail.com', 1, 4));
-pg_execute($dbconn,'insert_req',array('Henry Gallardo', $passHenry, 20, 'hbanchon@gmail.com', 1, 3));
-pg_execute($dbconn,'insert_req',array('Rodrigo Alvarenga', $passRodrigo, 20, 'ralvarenga@gmail.com', 1, 2));
-
+//pg_execute($dbconn,'insert_req',array('Ernesto Cabezas', $passErnesto, 20, 'ecabezas@gmail.com', 1, 1));
+//pg_execute($dbconn,'insert_req',array('Nelson Castro', $passNelson, 20, 'nc@sed.me', 1, 2));
+//pg_execute($dbconn,'insert_req',array('Pedro Gómez', $passPedro, 23, 'pedrogo14@gmail.com', 1, 4));
+//pg_execute($dbconn,'insert_req',array('Henry Gallardo', $passHenry, 20, 'hbanchon@gmail.com', 1, 3));
+//pg_execute($dbconn,'insert_req',array('Rodrigo Alvarenga', $passRodrigo, 20, 'ralvarenga@gmail.com', 1, 2));
+pg_execute($dbconn,'insert_req',array('Andres Quijada', $pass, 21, 'kitsf@gmail.com', 1,1));
 ?>

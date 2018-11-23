@@ -13,16 +13,18 @@
 
     include 'conn.php';
 
+    $ID=$_SESSION['id'];
+
     $dbconn=
     pg_connect("host=$DB_HOST port=$DB_PORT dbname=$DB_NAME user=$DB_USER password=$DB_PASS connect_timeout=5")
      or die("Murio");
-    $result=pg_query($dbconn, "SELECT*FROM materia");
+    $result=pg_query($dbconn, "SELECT materia.nombre_materia, materia.id_materia FROM tutoria INNER JOIN materia ON tutoria.id_usuario = '$ID'");
     $dataResult="";
     while($row=pg_fetch_array($result)){
         $id=$row['id_materia'];
         $name=$row['nombre_materia'];
         $dataResult=$dataResult."<tr><td class=\"id\">$id</td><td>$name</td>";
-        if($type==2){
+        if($type==1){
             $dataResult=$dataResult."<td><a href=\"delete-materia.php\" class=\"delete waves-effect waves-light btn red\">BORRAR</a></td>";
             $dataResult=$dataResult."<td><a class=\"mod waves-effect waves-light btn blue\">MODIFICAR</a></td>";
         }
@@ -43,7 +45,7 @@
 </head>
 <body>
 
-    <?php include 'dashboard.php' ?>
+    <?php include 'nav-bar.php' ?>
 
     <div class="table">
         <table class="striped centered">
@@ -52,7 +54,7 @@
                     <th>ID</th>
                     <th>Nombre</th>
                     <?php
-                        if($type==2){
+                        if($type==1){
                             echo "<th>Borrar</th><th>Modificar</th>";
                         }
                     ?>
@@ -62,15 +64,9 @@
         </table>   
     </div>
     <div class="fixed-action-btn">
-        <a class="btn-floating btn-large red">
-            <i class="large material-icons">mode_edit</i>
+        <a href="form-materia.php" class="btn-floating btn-large red">
+            <i class="large material-icons">add</i>
         </a>
-        <ul>
-            <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
-            <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
-            <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
-            <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
-        </ul>
     </div>
     <script src="js/materias.js"></script>
 </body>

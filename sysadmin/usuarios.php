@@ -53,7 +53,7 @@
 
     <div class="fixed-action-btn">
         <a href="form-user.php" class="btn-floating btn-large red">
-            <i class="large material-icons">mode_edit</i>
+            <i class="large material-icons">add</i>
         </a>
     </div>
       

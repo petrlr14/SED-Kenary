@@ -10,11 +10,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <link rel="stylesheet" href="./css/style-dashboard.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="icon" href="../img/LogoKenary.png">
+    <link rel="icon" href="./img/LogoKenary.png">
     <title>Dashboard</title>
 </head>
 <body>
-    
+
     <div class="navbar-fixed">
         <nav>
             <div class="nav-wrapper">
@@ -26,42 +26,40 @@
     <div class="cont">
 
         <div class="row">
-    <div class="col m6">
-      <div class="card blue-grey darken-1">
-        <div class="card-content white-text">
-          <span class="card-title">Card Title</span>
-          <p>I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively.</p>
-        </div>
-        <div class="card-action">
-          <a href="#">This is a link</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col m6">
-      <div class="card blue-grey darken-1">
-        <div class="card-content white-text">
-          <span class="card-title">Card Title</span>
-          <p>I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively.</p>
-        </div>
-        <div class="card-action">
-          <a href="#">This is a link</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col m6">
-      <div class="card blue-grey darken-1">
+    <div class="col m10">
+      <div class="card teal lighten-1">
         <div class="card-content white-text">
           <span class="card-title">Usuarios</span>
-          <p>Administra los usuarios que tienen acceso al sistema Kenary</p>
+          <p>Administra los usuarios que tienen acceso al servicio de Kanery</p>
         </div>
         <div class="card-action">
-          <a href="usuarios.php">Usuarios</a>
+          <a href="usuarios.php">Ir a usuarios</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col m10">
+      <div class="card teal lighten-1">
+        <div class="card-content white-text">
+          <span class="card-title">Materias</span>
+          <p>Administra las materias de las que se ofrecen tutorias en Kanery</p>
+        </div>
+        <div class="card-action">
+          <a href="materias.php">Ir a materias</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col m10">
+      <div class="card teal lighten-1">
+        <div class="card-content white-text">
+          <span class="card-title">Ir a roles</span>
+          <p>Ten control de los roles que puedes asignar a nuevos usuarios en Kanery</p>
+        </div>
+        <div class="card-action">
+          <a href="roles.php">Ir a roles</a>
         </div>
       </div>
     </div>

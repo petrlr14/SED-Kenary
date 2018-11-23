@@ -10,7 +10,7 @@
         $id=$row['id_rol'];
         $name=$row['nombre_rol'];
         $dataResult=$dataResult."<tr><td class=\"id\">$id</td><td>$name</td>";
-        $dataResult=$dataResult."<td><a href=\"delete-materia.php\" class=\"delete waves-effect waves-light btn red\">BORRAR</a></td>";
+        $dataResult=$dataResult."<td><a href=\"delete-rol.php\" class=\"delete waves-effect waves-light btn red\">BORRAR</a></td>";
         $dataResult=$dataResult."<td><a class=\"mod waves-effect waves-light btn blue\">MODIFICAR</a></td>";
     }
 ?>
@@ -44,5 +44,6 @@
             <i class="large material-icons">add</i>
         </a>
     </div>
+    <script src="js/roles.js"></script>
 </body>
 </html>

@@ -21,12 +21,17 @@
     pg_close();
 
     if($re[1]==$hash){
-        $_SESSION['logged']=true;
-        $_SESSION['start']=time();
-        $_SESSION['expire']=$_SESSION['start']+(10*60);
-        $_SESSION['type']=$re[2];
-        $_SESSION['id']=$re[0];
-        header('Location: https://kenary.nelsoncastro.me/dashboard.php');
+        echo $re[2];
+        /* if($re[2]==2){
+            header('Location: https://kenary.nelsoncastro.me?admin=true');
+        }else{
+            $_SESSION['logged']=true;
+            $_SESSION['start']=time();
+            $_SESSION['expire']=$_SESSION['start']+(10*60);
+            $_SESSION['type']=$re[2];
+            $_SESSION['id']=$re[0];
+            header('Location: https://kenary.nelsoncastro.me/dashboard.php');
+        } */
     }else{
         header('Location: https://kenary.nelsoncastro.me?badcredentials=true');
     }
